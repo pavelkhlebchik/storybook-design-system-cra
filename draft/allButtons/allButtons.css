@@ -1,0 +1,206 @@
+.storybook-button {
+  font-family: Roboto;
+  font-weight: normal;
+
+  border: 1px solid;
+  border-color: #357e81;
+  /*border-radius: 3em;*/
+  border-radius: 2px;
+  margin: auto !important;
+  text-align: start !important;
+  cursor: pointer;
+  display: flex;
+  line-height: 1;
+  min-width: 80px;
+  margin: 0 auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th {
+  background-color: black;
+  color: white;
+  width: 100px;
+}
+td {
+  padding: 5px;
+}
+
+/*.storybook-button--primary {*/
+/*  color: white;*/
+/*  background-color: #4BA1A5;*/
+/*}*/
+
+.all-buttons.common-styling--spread {
+  background-color: grey;
+  border-color: dimgrey;
+}
+
+.all-buttons.common-styling--main {
+  background-color: #4ba1a5;
+  border-color: #357e81;
+}
+
+.all-buttons.common-styling--edo {
+  background-color: #eeaf41;
+  border-color: #ec970e;
+}
+
+.all-buttons.common-styling--gosotchet {
+  background-color: #488bca;
+  border-color: #2c70af;
+}
+
+.all-buttons.common-styling--arenda {
+  background-color: #d58576;
+  border-color: #ce5a46;
+}
+
+.all-buttons.common-styling--um {
+  background-color: #4bb9ba;
+  border-color: #339799;
+}
+
+.all-buttons.common-styling--big-data {
+  background-color: #5ab8c5;
+  border-color: #36a1b0;
+}
+
+.all-buttons.common-styling--check-index {
+  background-color: #5bc0de;
+  border-color: #23a5cd;
+}
+
+.all-buttons.common-styling--main-hover {
+  background-color: #40898c;
+  border-color: #357e81;
+}
+
+.all-buttons.common-styling--edo-hover {
+  background-color: #eba01e;
+  border-color: #ec970e;
+}
+
+.all-buttons.common-styling--gosotchet-hover {
+  background-color: #367aba;
+  border-color: #2c70af;
+}
+
+.all-buttons.common-styling--arenda-hover {
+  background-color: #cd6d5b;
+  border-color: #ce5a46;
+}
+
+.all-buttons.common-styling--um-hover {
+  background-color: #3ea1a2;
+  border-color: #339799;
+}
+
+.all-buttons.common-styling--bigdata-hover {
+  background-color: #41aab9;
+  border-color: #36a1b0;
+}
+
+.all-buttons.common-styling--check-index-hover {
+  background-color: #3cb4d8;
+  border-color: #23a5cd;
+}
+
+.all-buttons.storybook-button--secondary {
+  color: #4ba1a5;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+.secondary-styling--main {
+  color: #4ba1a5;
+}
+
+.secondary-styling--edo {
+  color: #eeaf41;
+}
+
+.secondary-styling--gosotchet {
+  color: #488bca;
+}
+
+.secondary-styling--arenda {
+  color: #d58576;
+}
+
+.secondary-styling--um {
+  color: #4bb9ba;
+}
+
+.secondary-styling--bigdata {
+  color: #5ab8c5;
+}
+
+.secondary-styling--check-index {
+  color: #5bc0de;
+}
+
+.storybook-button--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.storybook-button--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.storybook-button--large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
+
+.storybook-button--focus {
+  border-color: #5bc0de;
+}
+
+.storybook-button--active-shadows {
+  box-shadow: 0px 3px 4px 0px #0000001a inset; /* Параметры тени */
+}
+
+.storybook-button--primary.common-styling--main.storybook-button--hover:hover {
+  background-color: #40898c;
+}
+
+.storybook-button--primary.common-styling--edo.storybook-button--hover:hover {
+  border-color: #5bc0de;
+}
+
+.storybook-button--active {
+  background-color: #40898c;
+}
+
+.storybook-button--loading {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.storybook-button--loading::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-color: #4ba1a5;
+  background-image: url("data:image/svg+xml,%3Csvg width='210' height='59' viewBox='0 0 210 59' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='210' height='59'%3E%3Crect width='210' height='59' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3Cg opacity='0.3' filter='url(%23filter0_d)'%3E%3Cpath d='M-42 0H-18L32 59H8L-42 0Z' fill='white'/%3E%3C/g%3E%3Cg opacity='0.3' filter='url(%23filter1_d)'%3E%3Cpath d='M0 0H24L74 59H50L0 0Z' fill='white'/%3E%3C/g%3E%3Cg opacity='0.3' filter='url(%23filter2_d)'%3E%3Cpath d='M42 0H66L116 59H92L42 0Z' fill='white'/%3E%3C/g%3E%3Cg opacity='0.3' filter='url(%23filter3_d)'%3E%3Cpath d='M84 0H108L158 59H134L84 0Z' fill='white'/%3E%3C/g%3E%3Cg opacity='0.3' filter='url(%23filter4_d)'%3E%3Cpath d='M126 0H150L200 59H176L126 0Z' fill='white'/%3E%3C/g%3E%3Cg opacity='0.3' filter='url(%23filter5_d)'%3E%3Cpath d='M168 0H192L242 59H218L168 0Z' fill='white'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='-46' y='-2' width='82' height='67' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3Cfilter id='filter1_d' x='-4' y='-2' width='82' height='67' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3Cfilter id='filter2_d' x='38' y='-2' width='82' height='67' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3Cfilter id='filter3_d' x='80' y='-2' width='82' height='67' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3Cfilter id='filter4_d' x='122' y='-2' width='82' height='67' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3Cfilter id='filter5_d' x='164' y='-2' width='82' height='67' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-position: -100%;
+  color: #4ba1a5;
+  background-repeat: repeat-x;
+  animation: sliding 120s linear infinite;
+  will-change: background-position;
+  transform: translate3d(0, 0, 0);
+}
+
+.storybook-button--disabled {
+  opacity: 0.3;
+}

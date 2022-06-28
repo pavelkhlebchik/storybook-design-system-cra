@@ -1,0 +1,45 @@
+/*.product-counter {*/
+/*    display: flex;*/
+/*}*/
+
+/*.btn {*/
+/*    background: transparent;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    width: 2rem;*/
+/*    height: 2rem;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.increment {*/
+/*    margin-left: 0.5rem;*/
+/*}*/
+
+/*.decrement {*/
+/*    margin-right: 0.5rem;*/
+/*}*/
+
+/*.btn:disabled {*/
+/*    opacity: 0.3;*/
+/*}*/
+
+/*.btn img {*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*.score input {*/
+/*    width: 2rem;*/
+/*    height: 2rem;*/
+/*    box-sizing: border-box;*/
+/*    text-align: center;*/
+/*    background: #FFFFFF;*/
+/*    border-radius: 2px;*/
+/*    border: 1px solid #D6D6D6;*/
+/*}*/
+
+/*@media (max-width: 1024px) {*/
+/*    .score input, .btn {*/
+/*        width: 3rem;*/
+/*        height: 3rem;*/
+/*    }*/
+/*}*/

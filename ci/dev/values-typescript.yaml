@@ -1,0 +1,244 @@
+# Default values for main.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+####### This is edited by the developers #######
+
+# Count replicas app
+replicaCount: 1
+
+# Name secret, default docker-registry-ofd-git00
+imagePullSecrets:
+  - name: docker-registry-ofd-git00
+
+# Container port
+deployment:
+  port: 3000
+
+# Define annotation for a Deployment
+# The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels.
+# Default {}, delete {}, if you need to apply a value and uncomment the values below
+# YAML syntax
+annotations: {}
+  # prometheus.io/path: /actuator/prometheus
+  # prometheus.io/port: "8080"
+  # prometheus.io/scrape: "true"
+
+# Define Environment Variables for a Container, key: value
+# Default [], delete [], if you need to apply a value and uncomment the values below
+# Key/Value syntax
+environment: []
+  # JAVAPP_HEAP_MIN: 50m
+  # JAVAPP_HEAP_MAX: 512m
+
+# Define Environment Variables for a Container from already exist secret
+# Default {}, delete {}, if you need to apply a value and uncomment the values below
+# YAML syntax
+envFromSecret: {}
+  # - name: EXAMPLE_MINIO_ACCESS_KEY
+  #   valueFrom:
+  #     secretKeyRef:
+  #       key: item-from-secret
+  #       name: name-secret
+  # - name: EXAMPLE_MINIO_SECRET_KEY
+  #   valueFrom:
+  #     secretKeyRef:
+  #       key: item-from-secret
+  #       name: name-secret
+
+# Define a environment with multiline data for a Container
+# YAML syntax
+environmentPlain: {}
+  # name: SYSTEM_PROPERTIES_EXAMPLE
+  # value: |-
+  #   server.port=8080
+  #   spring.profiles.active=prod
+  #   spring.cloud.config.discovery.service-id=config-server
+
+# Define JAVAPP_SYSTEM_PROPERTIES Environment Variables for a Container
+# Default [], delete [], if you need to apply a value and uncomment the values below
+javaSystemProperties: []
+  # - server.port=8080
+  # - spring.profiles.active=staging
+  # - spring.cloud.config.discovery.service-id=config-service
+
+# Uncomment for use
+# command:
+# - /bin/echo
+# - "hello world"
+
+# Uncomment for use
+# args:
+#   "echo":
+#   "--something":
+#   "key": "value"
+
+# A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key.
+# Such information might otherwise be put in a Pod specification or in a container image.
+# Using a Secret means that you don't need to include confidential data in your application code.
+# Because Secrets can be created independently of the Pods that use them,
+# there is less risk of the Secret (and its data) being exposed during the workflow of creating, viewing, and editing Pods.
+# Kubernetes, and applications that run in your cluster, can also take additional precautions with Secrets,
+# such as avoiding writing confidential data to nonvolatile storage.
+# Secrets are similar to ConfigMaps but are specifically intended to hold confidential data.
+# Opaque Secret Opaque is the default Secret type
+secrets:
+  # Create = true, if you need to create a new secret
+  create: false
+  # AlreadyExists = true, if the secret already exists
+  alreadyExists: false
+  defaultMode: 400
+  mountPath: /path/something
+  secretName: example
+  # Data is required when creating a secret
+  # Key/Value syntax
+  data: []
+    # token-signing-key: "123234"
+    # cashbox-api-key: Eascokl1240sfdgHfdslkf
+  # Items are optional
+  # If necessary, use several objects in different ways within one secret
+  # YAML syntax
+  items: {}
+    # - key: token-signing-key
+    #   path: token/token-signing-key
+    # - key: cashbox-api-key
+    #   path: api/cachbox-api-key
+
+# Creates a ConfigMap with key/value data
+# Key/Value syntax
+configMap: []
+  # key: value
+
+# Creates a ConfigMap with multiline data
+# YAML syntax
+configMapPlain: {}
+  # configName: name
+  # data: |-
+  #   adsfwdgsfgs
+  #   adsfwdgsfgs
+  #   adsfwdgsfgs
+  #   adsfwdgsfgs
+
+# By default an empty directory is created
+# ReadWriteOnce – the volume can be mounted as read-write by a single node
+# ReadOnlyMany – the volume can be mounted read-only by many nodes
+# ReadWriteMany – the volume can be mounted as read-write by many nodes
+persistentVolume:
+  alreadyExists: false
+  #  claimName: nvidia
+  create: false
+  mountPath: /reports
+  accessModes: ReadWriteMany
+  size: 1Gi
+  storageClass: rook-ceph-block # Attention!!! Do not change!!! Modify in agreement with the DevOps Engineers
+  volumeMode: Filesystem # OR Block Volume Mode
+
+# Default {}, delete {}, if you need to apply a value and uncomment the values below
+podSecurityContext: {}
+  # fsGroup: 2000
+
+# Default {}, delete {}, if you need to apply a value and uncomment the values below
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 2000
+
+# Default {}, delete {}, if you need to apply a value and uncomment the values below
+health: {}
+  # livenessProbe:
+  #   httpGet:
+  #     path: "/actuator/health"
+  #     port: 8080
+  #     scheme: HTTP
+  #   initialDelaySeconds: 60
+  #   periodSeconds: 60
+  #   successThreshold: 1
+  #   failureThreshold: 3
+  #   timeoutSeconds: 5
+  # livenessProbe:
+  #   httpGet:
+  #     path: "/"
+  #     port: 8000
+  #     httpHeaders:      # httpHeaders not mandatory
+  #     - name: Host
+  #       value: something.dev.kube.pofd.ru
+  #   initialDelaySeconds: 30
+  #   periodSeconds: 60
+  # readinessProbe:
+  #   httpGet:
+  #     path: "/"
+  #     port: 8000
+  #     httpHeaders:      # httpHeaders not mandatory
+  #     - name: Host
+  #       value: something.dev.kube.pofd.ru
+  #   initialDelaySeconds: 30
+  #   periodSeconds: 60
+
+# Default {}, delete {}, if you need to apply a value and uncomment the values below
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 2000m
+    memory: 1Gi
+  requests:
+    cpu: 100m
+    memory: 512Mi
+
+# Horizontal Pod Autoscaler
+# Default {}, delete {}, if you need to apply a value and uncomment the values below
+hpa: {}
+  # enabled: true
+  # replicas: 1
+  # cpuUtilization: 70
+  # maxReplicas: 3
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  # YAML syntax
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
+
+service:
+  type: ClusterIP
+  port: 3000
+  extraPorts:
+    # - 9010
+    # - 8002
+    # - ...
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    # nginx.org/mergeable-ingress-type: minion
+    # nginx.org/rewrites: serviceName=egress-sms rewrite=/
+    # nginx.ingress.kubernetes.io/proxy-body-size: 5m
+    # nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+    # nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    # nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: storybook-ts.dev.kube.pofd.ru
+      paths:
+        - /
+      # Default pathType: ImplementationSpecific
+      # pathType: ImplementationSpecific
+    # - host: host2.kube-dev.platformaofd.ru
+    #   paths:
+    #   - /
+    # Default pathType: ImplementationSpecific
+    # pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local

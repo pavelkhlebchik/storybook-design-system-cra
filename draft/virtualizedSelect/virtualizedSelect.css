@@ -1,0 +1,41 @@
+.virtualized-select {
+  background-color: white;
+  border: solid 1px rgba(124, 134, 145, 0.06);
+  border-radius: 4px;
+  flex-grow: 1;
+  margin-right: 20px;
+  max-width: 350px;
+  min-width: 150px;
+}
+
+.virtualized-select.disabled {
+  background-color: rgba(124, 134, 145, 0.06);
+}
+
+.virtualized-select.required {
+  border: solid 1px red;
+}
+
+.virtualized-select > div {
+  margin: 0;
+}
+
+.virtualized-select input {
+  /* margin-right: 15px; */
+}
+
+.virtualized-select .auto-sized-menu {
+  height: 250px;
+}
+
+.virtualized-select .option-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.virtualized-select .option-container .option-subtitle {
+  text-align: end;
+  font-size: 10px;
+  margin-left: 20px;
+}

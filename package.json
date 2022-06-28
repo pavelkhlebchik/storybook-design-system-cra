@@ -1,14 +1,19 @@
 {
-  "name": "storybook-cra",
+  "name": "ofd-storybook-cl",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.41",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -19,14 +24,13 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "prepare": "npm run dist",
-    "dist": "rm -rf dist/* && babel src/ --out-dir dist --copy-files --no-copy-ignored --ignore src/**/*.stories.js"
+    "dist": "rm -rf dist/* && babel components/ --out-dir dist --copy-files --no-copy-ignored --ignore components/**/*.stories.js --extensions '.ts,.tsx'",
+    "check-types": "tsc"
   },
-
   "files": [
-    "dist"      
+    "dist"
   ],
   "main": "dist/index.js",
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -57,9 +61,13 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
     "@babel/plugin-transform-react-jsx": "^7.17.12",
+    "@babel/plugin-transform-typescript": "^7.18.4",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -73,5 +81,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
     "webpack": "^5.73.0"
-  }
+  },
+  "author": "Pavel Koltsov",
+  "license": "ISC"
 }

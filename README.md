@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Библиотека компонентов Платформа ОФД (Storybook + React(TypeScript). Based on Create-React-App)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Представляет собой обычную библиотеку компонентов, только с GUI в виде Storybook'a
+Документация по написанию сториз - https://storybook.js.org/docs/react/writing-stories/introduction (TS)
 
-## Available Scripts
+## Как установить библиотеку компонентов?
 
-In the project directory, you can run:
+### `{npm install git+ssh://git@ofd-git00.ev.local:pofd-front/storybook.git}`
 
-### `npm start`
+В `node_modules` добавляется пакет `ofd-storybook-cl` оттуда же и берём импорты
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Как использовать библиотеку компонентов?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+К примеру:
 
-### `npm test`
+`import { Button } from 'ofd-storybook-cl/dist';`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+В папке `dist` у нас лежат транпиленные на Babel 8+ наши `.tsx` компоненты и `index.js` (точка входа откуда всё импортируется);
 
-### `npm run build`
+## Как посмотреть библиотеку компонентов через Storybook?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm run storybook`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+На `http://localhost:6006/` поднимается приложение, либо можно на любом другом порту, если установить его в package.json
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Как получить статический Storybook?
 
-### `npm run eject`
+### `npm run build-storybook`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Подготовка библиотеки компонентов
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm prepare`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Перекомпилит последнюю версию которая лежит в `dist`.
+Данная команда _срабатывает автоматически_ при установке пакета
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Проверка компиляции библиотеки компонентов
 
-## Learn More
+### `npm run dist`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Собирает всё в `dist`.
+Из этой команды состоит `prepare`
+Используется чтобы, к примеру, протестить компиляцию компонента, без установки зависимости в другом репозитории.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Работа в Библиотеке.
 
-### Code Splitting
+!ИМПОРТЫ В `index.tsx` КОМПОНЕНТОВ ПИШЕМ С РАШРИРЕНИЕМ `.js`!
+не смотря что они у нас `.tsx`! Так нужно для Babel. Потому что в dist мы обращаемся к `.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+В остальном пишем код в соответвии с код-стайлом и линтером:
+https://confluence.evotor.ru/display/EO/javaScript+codestyle - JS
+https://confluence.evotor.ru/display/EO/React+codestyle - React
+https://confluence.evotor.ru/display/EO/Typescript+codestyle - Typescript
