@@ -24,7 +24,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "prepare": "npm run dist",
-    "dist": "rm -rf dist/* && babel components/ --out-dir dist --copy-files --no-copy-ignored --ignore components/**/*.stories.js --extensions '.ts,.tsx'",
+    "dist": "rm -rf dist/* && babel components/ --out-dir dist --copy-files --no-copy-ignored --ignore components/**/*.stories.js --extensions \".ts,.tsx\"",
     "check-types": "tsc"
   },
   "files": [
