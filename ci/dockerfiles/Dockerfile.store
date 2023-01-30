@@ -1,7 +1,0 @@
-FROM ofd-git00.ev.local:5005/pofd-ops/docker-stash/node:15.14.0-alpine3.13
-ENV PORT=3000 \
-   DEBUG='*'
-WORKDIR /app
-COPY build .
-EXPOSE 3000
-CMD ["npm", "start"]
